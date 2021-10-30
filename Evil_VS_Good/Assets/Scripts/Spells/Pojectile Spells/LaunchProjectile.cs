@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class LaunchProjectile : MonoBehaviour, ILaunchProjectile
 {
-    private SpellCollection spellCollection;
     private MousePointer mousePointer;
+    private SpellCollection spellCollection;
 
     public void ShootInALine()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            mousePointer = FindObjectOfType<MousePointer>();
+        mousePointer = FindObjectOfType<MousePointer>();
             spellCollection = FindObjectOfType<SpellCollection>();
 
             GameObject projectile = Instantiate(
@@ -24,6 +22,5 @@ public class LaunchProjectile : MonoBehaviour, ILaunchProjectile
             projectile.GetComponent<Fireball>().Setup(shootDir, transform.gameObject);
             Object.Destroy(projectile, 3f);
 
-        }
     }
 }

@@ -4,37 +4,28 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] CharacterController controller;
-    [SerializeField] private bool grounded;
-    [SerializeField] private int runSpeed;
-    MousePointer mousePointer;
-    PlayerMovement playerMovement;
-    LaunchProjectile launchProjectile;
+    [SerializeField] private bool _grounded;
 
-    void Start()
-    {
-        mousePointer = gameObject.AddComponent(typeof(MousePointer)) as MousePointer;
-        playerMovement = gameObject.AddComponent(typeof(PlayerMovement)) as PlayerMovement;
-        launchProjectile = gameObject.AddComponent(typeof(LaunchProjectile)) as LaunchProjectile;
-    }
+    private IPlayerMovement _playerMovement;
+    private IPlayerLookAt _playerLookAt;
+    private IMousePointAt _mousePointAt;
+    private IRayProvider _rayProvider;
 
-    void Update()
-    {
-        PlayerLookAt(mousePointer);
-        MovePlayer(playerMovement);
-        PlayerShoot(launchProjectile);
 
-    }
-    private void PlayerLookAt(IPlayerControl playerControl)
+    private void Awake()
     {
-        playerControl.LookAtMouse(this.transform);
+        _playerMovement = GetComponent<IPlayerMovement>();
+        _playerLookAt = GetComponent<IPlayerLookAt>();
+        _mousePointAt = GetComponent<IMousePointAt>();
+        _rayProvider = GetComponent<IRayProvider>();
     }
-    private void MovePlayer(IMovePlayer movePlayer)
+    private void Update()
     {
-        movePlayer.MovePlayer(controller, grounded, runSpeed);
-    }
-    private void PlayerShoot(ILaunchProjectile launchProjectile)
-    {
-        launchProjectile.ShootInALine();
+        if (_grounded)
+        {            
+            _playerMovement.MovePlayer();
+        }
+        // Makes the playercharacter Look at the mouse point position.
+        _playerLookAt.PlayerLookAtPoint(_mousePointAt.MousePointLocation(_rayProvider.CreateRay()));
     }
 }

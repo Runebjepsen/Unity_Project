@@ -54,18 +54,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\Spells\Interfaces\ISpellAttributes.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\Spells\ISpellAttributes.cs" />
     <Compile Include="Assets\Scripts\Spells\Pojectile Spells\Fireball.cs" />
     <Compile Include="Assets\Scripts\Spells\SpellCollection.cs" />
-    <Compile Include="Assets\Scripts\Spells\Interfaces\IProjectileAttributes.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\Spells\IProjectileAttributes.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerActions.cs" />
     <Compile Include="Assets\Scripts\Player\Interfaces\IPlayerControl.cs" />
     <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
-    <Compile Include="Assets\Scripts\Spells\Interfaces\ISpawnAttributes.cs" />
-    <Compile Include="Assets\Scripts\Spells\Interfaces\IInstantAttributes.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\Spells\ISpawnAttributes.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\Spells\IInstantAttributes.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\Player\LaunchProjectile.cs" />
+    <Compile Include="Assets\Scripts\Spells\Pojectile Spells\LaunchProjectile.cs" />
     <Compile Include="Assets\Scripts\Mouse\MousePointer.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\Player\IPlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\Player\IRayProvider.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\Player\IMousePointAt.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\Player\IPlayerLookAt.cs" />
+    <Compile Include="Assets\Scripts\Player\MouseLocation.cs" />
+    <Compile Include="Assets\Scripts\Player\MouseScreenRayProvider.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerLookAt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Scripts.asmdef" />
