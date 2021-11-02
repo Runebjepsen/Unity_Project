@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MousePointer : MonoBehaviour, IPlayerControl
+public class MousePointer : MonoBehaviour
 {
     public Vector3 mouseLocation { get; private set; }
     public void LookAtMouse(Transform player)
