@@ -53,16 +53,15 @@
     <UnityVersion>2020.3.20f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\WorkingOn\InstantiateProjectile.cs" />
     <Compile Include="Assets\Scripts\Spells\FireBallBehaviour.cs" />
     <Compile Include="Assets\Scripts\Player\WorkingOn\ShootStraight.cs" />
-    <Compile Include="Assets\Scripts\CharacterController.cs" />
     <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
-    <Compile Include="Assets\Scripts\Player\MousePosition.cs" />
+    <Compile Include="Assets\Scripts\Player\CharacterBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Mouse\MousePosition.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Mouse\MousePointer.cs" />
-    <Compile Include="Assets\Scripts\Player\CharacterBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Player\Fireball.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Scripts.asmdef" />
